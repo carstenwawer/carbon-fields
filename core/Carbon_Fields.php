@@ -232,7 +232,7 @@ final class Carbon_Fields {
 		# Sanitize directory separator on Windows
 		$url = str_replace( '\\' ,'/', $url );
 
-		$possible_locations = array(
+		$possible_locations = apply_filters( 'carbonfields_possible_locations', array(
 			WP_PLUGIN_DIR => \plugins_url(), # If installed as a plugin
 			WP_CONTENT_DIR => \content_url(), # If anywhere in wp-content
 			ABSPATH => \site_url( '/' ), # If anywhere else within the WordPress installation
